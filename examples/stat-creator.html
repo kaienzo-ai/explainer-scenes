@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>stat (creator) — explainer-scenes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f4efe1;
+    --red: #7d1414;
+    --muted: rgba(244,239,225,0.5);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh;
+    background: #2a1010;
+    display: flex; align-items: center; justify-content: center;
+    font-family: "Inter", -apple-system, sans-serif;
+  }
+  .scene {
+    aspect-ratio: 9 / 16;
+    height: min(96vh, 1280px);
+    background: var(--red);
+    color: var(--cream);
+    position: relative;
+    overflow: hidden;
+    padding: 9% 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .kicker {
+    font-size: 0.95rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    font-weight: 800;
+    opacity: 0.75;
+  }
+  .center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    margin: 2rem 0;
+  }
+  .stat {
+    font-family: "Anton", Impact, sans-serif;
+    font-size: clamp(8rem, 26vh, 16rem);
+    line-height: 0.85;
+    letter-spacing: -0.02em;
+    margin: 0;
+  }
+  .caption {
+    font-family: "Anton", Impact, sans-serif;
+    font-size: clamp(1.8rem, 4.5vh, 2.6rem);
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    margin-top: 1.5rem;
+    max-width: 90%;
+  }
+  .source {
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.55;
+  }
+  .footer {
+    font-size: 0.8rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    opacity: 0.55;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--muted);
+  }
+</style>
+</head>
+<body>
+  <div class="scene">
+    <div>
+      <div class="kicker">30-day window</div>
+    </div>
+    <div class="center">
+      <div class="stat">168.9K</div>
+      <div class="caption">Views across IG @kaienzo.ai</div>
+    </div>
+    <div>
+      <div class="source">93.2% from non-followers · organic discovery</div>
+      <div class="footer" style="margin-top:1.2rem;"><span>Example · Creator metric</span><span>variant</span></div>
+    </div>
+  </div>
+</body>
+</html>

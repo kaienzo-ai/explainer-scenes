@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>flow — explainer-scenes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f4efe1;
+    --ink: #1a1a1a;
+    --red: #7d1414;
+    --red-bright: #a11c1c;
+    --rule: #d6cfb8;
+    --muted: #6b6b6b;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh;
+    background: #2a1010;
+    display: flex; align-items: center; justify-content: center;
+    font-family: "Inter", -apple-system, sans-serif;
+  }
+  .scene {
+    aspect-ratio: 9 / 16;
+    height: min(96vh, 1280px);
+    background: var(--cream);
+    color: var(--ink);
+    position: relative;
+    overflow: hidden;
+    padding: 9% 8%;
+    display: flex;
+    flex-direction: column;
+  }
+  .kicker {
+    font-size: 0.95rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-weight: 800;
+    margin-bottom: 1.2rem;
+  }
+  .title {
+    font-family: "Anton", Impact, sans-serif;
+    font-size: clamp(2.6rem, 6vh, 4rem);
+    line-height: 0.95;
+    letter-spacing: 0.005em;
+    margin: 0 0 2.5rem;
+    text-transform: uppercase;
+  }
+  .steps {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .step {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 1.8rem;
+    padding: 1.6rem 0;
+    border-top: 1px solid var(--rule);
+  }
+  .step:last-child { border-bottom: 1px solid var(--rule); }
+  .step .num {
+    font-family: "Anton", Impact, sans-serif;
+    font-size: clamp(3rem, 8vh, 5rem);
+    line-height: 0.8;
+    color: var(--red);
+    min-width: 4rem;
+  }
+  .step .text {
+    font-family: "Anton", Impact, sans-serif;
+    font-size: clamp(1.8rem, 4.5vh, 3rem);
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+  }
+  .footer {
+    margin-top: auto;
+    font-size: 0.8rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+  }
+</style>
+</head>
+<body>
+  <div class="scene">
+    <div class="kicker">Pipeline</div>
+    <h1 class="title">From commit<br>to prod</h1>
+    <div class="steps">
+      <div class="step"><div class="num">01</div><div class="text">Commit</div></div>
+      <div class="step"><div class="num">02</div><div class="text">Build</div></div>
+      <div class="step"><div class="num">03</div><div class="text">Test</div></div>
+      <div class="step"><div class="num">04</div><div class="text">Deploy</div></div>
+    </div>
+    <div class="footer"><span>Scene · Flow</span><span>01 / 08</span></div>
+  </div>
+</body>
+</html>

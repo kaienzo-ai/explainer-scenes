@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>quote — explainer-scenes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;800&family=Playfair+Display:ital,wght@1,500;1,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f4efe1;
+    --red: #7d1414;
+    --muted: rgba(244,239,225,0.55);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh;
+    background: #2a1010;
+    display: flex; align-items: center; justify-content: center;
+    font-family: "Inter", -apple-system, sans-serif;
+  }
+  .scene {
+    aspect-ratio: 9 / 16;
+    height: min(96vh, 1280px);
+    background: var(--red);
+    color: var(--cream);
+    position: relative;
+    overflow: hidden;
+    padding: 11% 9%;
+    display: flex;
+    flex-direction: column;
+  }
+  .kicker {
+    font-size: 0.95rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    font-weight: 800;
+    opacity: 0.75;
+  }
+  .mark {
+    font-family: "Playfair Display", Georgia, serif;
+    font-style: italic;
+    font-weight: 700;
+    font-size: clamp(7rem, 18vh, 12rem);
+    line-height: 0.5;
+    margin: 4rem 0 -1rem;
+    opacity: 0.95;
+  }
+  .quote {
+    font-family: "Playfair Display", Georgia, serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(2.2rem, 5.5vh, 3.8rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+  .attribution {
+    margin-top: auto;
+    padding-top: 1.4rem;
+    border-top: 1px solid var(--muted);
+  }
+  .name {
+    font-family: "Anton", Impact, sans-serif;
+    font-size: 1.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .role {
+    font-style: italic;
+    font-size: 1rem;
+    opacity: 0.7;
+    margin-top: 0.3rem;
+  }
+  .footer {
+    font-size: 0.8rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    opacity: 0.55;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+  }
+</style>
+</head>
+<body>
+  <div class="scene">
+    <div class="kicker">Quote</div>
+    <div class="mark">&ldquo;</div>
+    <p class="quote">If it hurts,<br>do it more<br>often.</p>
+    <div class="attribution">
+      <div class="name">Martin Fowler</div>
+      <div class="role">on continuous integration</div>
+    </div>
+    <div class="footer"><span>Scene · Quote</span><span>07 / 08</span></div>
+  </div>
+</body>
+</html>

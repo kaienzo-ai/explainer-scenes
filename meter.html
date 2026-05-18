@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>meter — explainer-scenes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f4efe1;
+    --ink: #1a1a1a;
+    --red: #7d1414;
+    --rule: #d6cfb8;
+    --muted: #6b6b6b;
+    --track-low: #c8c0ac;
+    --track-elite: #7d1414;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh;
+    background: #2a1010;
+    display: flex; align-items: center; justify-content: center;
+    font-family: "Inter", -apple-system, sans-serif;
+  }
+  .scene {
+    aspect-ratio: 9 / 16;
+    height: min(96vh, 1280px);
+    background: var(--cream);
+    color: var(--ink);
+    position: relative;
+    overflow: hidden;
+    padding: 9% 8%;
+    display: flex;
+    flex-direction: column;
+  }
+  .kicker {
+    font-size: 0.95rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-weight: 800;
+  }
+  .tier {
+    font-family: "Anton", Impact, sans-serif;
+    font-size: clamp(2.6rem, 6vh, 4rem);
+    line-height: 0.95;
+    text-transform: uppercase;
+    letter-spacing: 0.005em;
+    margin: 1rem 0 0;
+  }
+  .value-wrap {
+    margin: auto 0;
+    text-align: left;
+  }
+  .value {
+    font-family: "Anton", Impact, sans-serif;
+    font-size: clamp(9rem, 28vh, 18rem);
+    line-height: 0.85;
+    letter-spacing: -0.02em;
+    color: var(--red);
+  }
+  .unit {
+    font-size: 0.32em;
+    color: var(--ink);
+    margin-left: 0.5rem;
+    letter-spacing: 0.04em;
+  }
+  .gauge { margin-top: 1.5rem; }
+  .track {
+    height: 0.7rem;
+    background: linear-gradient(to right, var(--track-low) 0%, var(--track-low) 75%, var(--track-elite) 100%);
+    position: relative;
+  }
+  .marker {
+    position: absolute;
+    top: 50%;
+    width: 1.4rem;
+    height: 1.4rem;
+    background: var(--red);
+    border: 3px solid var(--cream);
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 0 1px var(--red);
+  }
+  .scale {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.8rem;
+    font-family: "Anton", Impact, sans-serif;
+    font-size: 0.95rem;
+    color: var(--muted);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .scale .active { color: var(--red); }
+  .footer {
+    margin-top: 1.8rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--rule);
+  }
+</style>
+</head>
+<body>
+  <div class="scene">
+    <div class="kicker">DORA · Deploy frequency</div>
+    <h1 class="tier">Elite tier</h1>
+    <div class="value-wrap">
+      <div class="value">12<span class="unit">/ DAY</span></div>
+      <div class="gauge">
+        <div class="track">
+          <div class="marker" style="left: 92%;"></div>
+        </div>
+        <div class="scale">
+          <span>Low</span>
+          <span>Medium</span>
+          <span>High</span>
+          <span class="active">Elite</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer"><span>Scene · Meter</span><span>08 / 08</span></div>
+  </div>
+</body>
+</html>

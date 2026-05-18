@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>explainer-scenes — gallery</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f4efe1;
+    --ink: #1a1a1a;
+    --red: #7d1414;
+    --red-bright: #a11c1c;
+    --rule: #d6cfb8;
+    --muted: #6b6b6b;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: "Inter", -apple-system, sans-serif;
+    padding: 4rem 2rem 6rem;
+  }
+  header {
+    max-width: 1180px;
+    margin: 0 auto 3rem;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 2rem;
+  }
+  .kicker {
+    font-size: 0.9rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-weight: 800;
+    margin-bottom: 0.6rem;
+  }
+  h1 {
+    font-family: "Anton", Impact, sans-serif;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    margin: 0 0 1rem;
+    letter-spacing: 0.005em;
+    text-transform: uppercase;
+    line-height: 0.95;
+  }
+  .sub {
+    color: var(--muted);
+    font-size: 1.05rem;
+    line-height: 1.55;
+    max-width: 62ch;
+  }
+  .sub a { color: var(--red); text-decoration: none; border-bottom: 1px solid currentColor; }
+  main {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+  .card {
+    background: var(--cream);
+    border: 1px solid var(--rule);
+    overflow: hidden;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+  .card:hover {
+    border-color: var(--red);
+    transform: translateY(-2px);
+  }
+  .card a { display: block; text-decoration: none; color: inherit; }
+  .frame {
+    aspect-ratio: 9 / 16;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background: #0a0a0a;
+  }
+  .frame iframe {
+    border: none;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  .meta {
+    padding: 1rem 1.2rem;
+    border-top: 1px solid var(--rule);
+  }
+  .name {
+    font-family: "Anton", Impact, sans-serif;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--red);
+  }
+  .when {
+    color: var(--muted);
+    font-size: 0.85rem;
+    line-height: 1.4;
+    font-style: italic;
+    margin-top: 0.2rem;
+  }
+  footer {
+    max-width: 1180px;
+    margin: 4rem auto 0;
+    padding-top: 2rem;
+    border-top: 1px solid var(--rule);
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  footer a { color: var(--red); text-decoration: none; border-bottom: 1px solid currentColor; }
+</style>
+</head>
+<body>
+<header>
+  <div class="kicker">A pattern catalog by Kaienzo</div>
+  <h1>Explainer<br>scenes</h1>
+  <p class="sub">
+    Eight reusable overlay patterns for short-form vertical video. Pick by
+    rhetorical fit, not by what looks cool. Open any card for the full-size
+    scene. See the <a href="README.md">README</a> for conventions and integration notes.
+  </p>
+</header>
+<main>
+  <div class="card"><a href="flow.html"><div class="frame"><iframe src="flow.html"></iframe></div><div class="meta"><div class="name">Flow</div><div class="when">"A leads to B leads to C"</div></div></a></div>
+  <div class="card"><a href="decision.html"><div class="frame"><iframe src="decision.html"></iframe></div><div class="meta"><div class="name">Decision</div><div class="when">"One question, two outcomes"</div></div></a></div>
+  <div class="card"><a href="terminal.html"><div class="frame"><iframe src="terminal.html"></iframe></div><div class="meta"><div class="name">Terminal</div><div class="when">"Here's what actually happened"</div></div></a></div>
+  <div class="card"><a href="compare.html"><div class="frame"><iframe src="compare.html"></iframe></div><div class="meta"><div class="name">Compare</div><div class="when">"This vs that (worse on left)"</div></div></a></div>
+  <div class="card"><a href="stat.html"><div class="frame"><iframe src="stat.html"></iframe></div><div class="meta"><div class="name">Stat</div><div class="when">"One number does the work"</div></div></a></div>
+  <div class="card"><a href="checklist.html"><div class="frame"><iframe src="checklist.html"></iframe></div><div class="meta"><div class="name">Checklist</div><div class="when">"Discrete steps to verify"</div></div></a></div>
+  <div class="card"><a href="quote.html"><div class="frame"><iframe src="quote.html"></iframe></div><div class="meta"><div class="name">Quote</div><div class="when">"Borrowed authority"</div></div></a></div>
+  <div class="card"><a href="meter.html"><div class="frame"><iframe src="meter.html"></iframe></div><div class="meta"><div class="name">Meter</div><div class="when">"Position on a scale"</div></div></a></div>
+</main>
+<footer>
+  <div>Built by Kai · <a href="https://github.com/kaienzo-ai">github.com/kaienzo-ai</a></div>
+  <div>MIT licensed</div>
+</footer>
+</body>
+</html>

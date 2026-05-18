@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>terminal — explainer-scenes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0808;
+    --cream: #f4efe1;
+    --red: #a11c1c;
+    --term-bg: #14110f;
+    --term-chrome: #221d1a;
+    --prompt: #ec9a4b;
+    --cmd: #f4efe1;
+    --out: #c8c0ac;
+    --out-ok: #8fc88a;
+    --muted: #6b6b6b;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh;
+    background: #1a0a0a;
+    display: flex; align-items: center; justify-content: center;
+    font-family: "Inter", -apple-system, sans-serif;
+  }
+  .scene {
+    aspect-ratio: 9 / 16;
+    height: min(96vh, 1280px);
+    background: var(--bg);
+    color: var(--cream);
+    position: relative;
+    overflow: hidden;
+    padding: 9% 6%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .corner {
+    position: absolute;
+    top: 4%;
+    right: 6%;
+    font-size: 0.8rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-weight: 800;
+  }
+  .corner::before {
+    content: "// ";
+    opacity: 0.6;
+  }
+  .terminal {
+    background: var(--term-bg);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+    font-family: "JetBrains Mono", "SF Mono", Menlo, monospace;
+  }
+  .chrome {
+    background: var(--term-chrome);
+    padding: 0.9rem 1rem;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  .dot { width: 0.85rem; height: 0.85rem; border-radius: 50%; }
+  .dot.r { background: #ff5f57; }
+  .dot.y { background: #febc2e; }
+  .dot.g { background: #28c840; }
+  .chrome .path {
+    margin-left: auto;
+    font-size: 0.85rem;
+    color: var(--muted);
+    font-family: "JetBrains Mono", monospace;
+  }
+  .body {
+    padding: 1.5rem 1.3rem;
+    font-size: clamp(0.95rem, 1.7vh, 1.15rem);
+    line-height: 1.7;
+  }
+  .line { white-space: pre-wrap; word-break: break-word; }
+  .prompt { color: var(--prompt); font-weight: 700; }
+  .cmd { color: var(--cmd); }
+  .out { color: var(--out); }
+  .out-ok { color: var(--out-ok); }
+  .blank { height: 0.6rem; }
+  .footer {
+    position: absolute;
+    bottom: 4%;
+    left: 6%;
+    right: 6%;
+    font-size: 0.8rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+  }
+</style>
+</head>
+<body>
+  <div class="scene">
+    <div class="corner">env · prod</div>
+    <div class="terminal">
+      <div class="chrome">
+        <div class="dot r"></div>
+        <div class="dot y"></div>
+        <div class="dot g"></div>
+        <div class="path">~/infra</div>
+      </div>
+      <div class="body">
+        <div class="line"><span class="prompt">$</span> <span class="cmd">kubectl get pods -n prod</span></div>
+        <div class="line out">NAME             READY   STATUS    AGE</div>
+        <div class="line out">api-7c9d4-8m2x   <span class="out-ok">1/1     Running</span>   2d</div>
+        <div class="line out">api-7c9d4-pq4r   <span class="out-ok">1/1     Running</span>   2d</div>
+        <div class="line out">worker-5fb-z9t   <span class="out-ok">1/1     Running</span>   2d</div>
+        <div class="line blank"></div>
+        <div class="line"><span class="prompt">$</span> <span class="cmd">kubectl rollout status deploy/api</span></div>
+        <div class="line out-ok">deployment "api" successfully rolled out</div>
+      </div>
+    </div>
+    <div class="footer"><span>Scene · Terminal</span><span>03 / 08</span></div>
+  </div>
+</body>
+</html>
